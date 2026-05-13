@@ -141,9 +141,9 @@ Content-Length: 94
 
 ## The following are screenshots of the request / response captured in Burp Repeater confirming the takeover:
 
-![Burp Repeater — request](./1.png)
+![Step 1 — GET /pbootcms-3.2.12/core/code.php primes $_SESSION['checkcode'] and returns the CAPTCHA image (here: "Xkr6")](./1.png)
 
-![Burp Repeater — response "修改成功！"](./2.png)
+![Step 2 — POST /pbootcms-3.2.12/?member/retrieve/ with the same PbootSystem cookie and the lowercased CAPTCHA answer overwrites victim's password (response: 修改成功！)](./2.png)
 
 After the request above, logging in at `/pbootcms-3.2.12/?member/login/` with `victim / 123456` succeeds and grants full access to the victim's member centre — account takeover is complete.
 
