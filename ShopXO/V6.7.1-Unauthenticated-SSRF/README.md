@@ -192,7 +192,7 @@ Content-Type: application/json; charset=utf-8
 Content-Length: 48
 Connection: close
 
-{"msg":"","code":0,"data":[ ... ]}
+{"msg":"","code":-1,"data":[ ... ]}
 ```
 
 The corresponding DNSLog console records the inbound DNS lookup of the canary hostname from the ShopXO server's public egress IP (the lookup must be resolved before cURL can issue the HTTP request, so its presence is an unforgeable proof that the server-side fetch was performed):
